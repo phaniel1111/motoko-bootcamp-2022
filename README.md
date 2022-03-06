@@ -1,1 +1,3 @@
-# MotokoBootcamp_Day1
+# MotokoBootcamp
+
+This is my repo for the Motoko Bootcamp
