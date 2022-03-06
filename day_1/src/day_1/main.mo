@@ -99,9 +99,8 @@ actor {
       };
       return newArr;
     };
-  //dfx deploy day_1
   
-
+  //Challenge 10 : Implement a function selection_sort that takes an array of natural numbers and returns the sorted array .
   //dfx canister call day_1 selection_sort '(vec { 1 ; 3 ; 5 ; 2 ; 4 })'
   class range(x : Nat, y : Int) {
     var i = x;
