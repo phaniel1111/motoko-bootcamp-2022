@@ -90,7 +90,6 @@ actor {
 
   //Challenge 9 : Write a function remove_from_array that takes 2 parameters : an array of natural numbers and a natural number n and returns a new array where all occurences of n have been removed (order should remain unchanged).
   //dfx canister call day_1 remove_from_array '(vec { 1 ; 3 ; 5 }, 5)'
-  
     public func remove_from_array(arr : [Nat], n : Nat) : async [Nat] {
       var newArr : [Nat] = [];
       for (num in arr.vals()) {
