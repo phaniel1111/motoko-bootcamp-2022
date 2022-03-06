@@ -128,9 +128,11 @@ actor {
           min_idx := j;
 
         //Swap
+        if(min_idx != j){
         temp := tmpArr[min_idx];
         tmpArr[min_idx] := tmpArr[j];
         tmpArr[j] := temp;
+        };
       };
     };
     // Turn back to inmutable
