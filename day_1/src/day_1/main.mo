@@ -1,6 +1,5 @@
 import Nat "mo:base/Nat";
 import Array "mo:base/Array";
-import Buffer "mo:base/Buffer";
 
 actor {
 
