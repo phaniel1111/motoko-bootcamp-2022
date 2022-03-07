@@ -1,4 +1,0 @@
-service : {
-  add: (nat) -> (nat);
-  greet: (text) -> (text);
-}
