@@ -127,7 +127,8 @@ actor {
 
   //Challenge 10: Implement a function bubble_sort that takes an array of natural numbers and returns the sorted array .
   //dfx canister call day_2 bubble_sort '(vec { 1 ; 3 ; 5 ; 2 ; 4 ; 2 })'
-    public func bubble_sort (arr : [Nat]) : async [Nat] {
+    public func bubble_sort (arr : [Nat]) : async [Nat] 
+    {
       // Turn the array into mutable
       let tmpArr : [var Nat] = Array.thaw(arr);
       let size = tmpArr.size();
