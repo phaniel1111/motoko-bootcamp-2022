@@ -60,7 +60,6 @@ actor {
 
     // Challenge 6 :
     //dfx canister call day_5 deposit_cycles '()'
-    let AMOUNT_TO_PAY : Nat = 100_000;
     public func deposit_cycles(): async Nat {
         return 100_000;
     };
