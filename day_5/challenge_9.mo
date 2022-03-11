@@ -6,7 +6,7 @@ import Iter "mo:base/Iter";
 
 actor {
     // Challenge 9 : 
-
+    var favoriteNumber = HashMap.HashMap<Principal, Nat>(0, Principal.equal, Principal.hash);
     stable var entries : [(Principal, Nat)] = [];
 
     system func preupgrade() {
@@ -14,12 +14,13 @@ actor {
     };
 
     system func postupgrade() {
+        favoriteNumber:= Hashmap.fromIter<Principal, Nat>{entries.vals(), 0, Principal.equal, Principal.hash};
         entries := [];
     };
 
     //
     //Challenge 2 :
-    let favoriteNumber = HashMap.HashMap<Principal, Nat>(0, Principal.equal, Principal.hash);
+    
 
     // Challenge 3 : 
     // a) 
