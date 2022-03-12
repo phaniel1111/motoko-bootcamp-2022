@@ -3,6 +3,7 @@ export const idlFactory = ({ IDL }) => {
   const DRC721 = IDL.Service({
     'approve' : IDL.Func([IDL.Principal, TokenId], [], []),
     'balanceOf' : IDL.Func([IDL.Principal], [IDL.Opt(IDL.Nat)], []),
+    'galleryOf' : IDL.Func([IDL.Principal], [IDL.Vec(TokenId)], []),
     'getApproved' : IDL.Func([IDL.Nat], [IDL.Principal], []),
     'isApprovedForAll' : IDL.Func(
         [IDL.Principal, IDL.Principal],

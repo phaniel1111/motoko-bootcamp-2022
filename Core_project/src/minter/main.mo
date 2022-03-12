@@ -25,6 +25,20 @@ actor class DRC721(_name : Text, _symbol : Text) {
     private let tokenApprovals : HashMap.HashMap<T.TokenId, Principal> = HashMap.fromIter<T.TokenId, Principal>(tokenApprovalsEntries.vals(), 10, Nat.equal, Hash.hash);
     private let operatorApprovals : HashMap.HashMap<Principal, [Principal]> = HashMap.fromIter<Principal, [Principal]>(operatorApprovalsEntries.vals(), 10, Principal.equal, Principal.hash);
 
+    public shared ({caller}) func galleryOf(p: Principal) : async [T.TokenId] {
+        
+        var galleryToken : [T.TokenId] = [];
+        
+        for ((K, V) in owners.entries()) {
+            if (p == V) {
+                galleryToken := Array.append<T.TokenId>(galleryToken,[K]);
+            };
+        };
+        return galleryToken;
+    };
+
+
+
     public shared func balanceOf(p : Principal) : async ?Nat {
         return balances.get(p);
     };
