@@ -14,7 +14,7 @@ actor {
     };
 
     system func postupgrade() {
-        favoriteNumber:= Hashmap.fromIter<Principal, Nat>{entries.vals(), 0, Principal.equal, Principal.hash};
+        favoriteNumber:= HashMap.fromIter<Principal, Nat>(entries.vals(), 0, Principal.equal, Principal.hash);
         entries := [];
     };
 
