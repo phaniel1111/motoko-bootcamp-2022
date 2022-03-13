@@ -45,5 +45,5 @@ async function own_nft() {
   console.log("The id is " + Array(mint_num));
 
   // Show how many nft the person minted.
-  document.getElementById("amount").innerText = "You have own " + Array(mint_num);
+  document.getElementById("amount").innerText = "This principal own " + Array(mint_num);
 };
