@@ -48,3 +48,9 @@ p {
   color: yellow;
   font-style: oblique;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

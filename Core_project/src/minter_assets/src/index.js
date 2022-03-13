@@ -10,6 +10,42 @@ import { Principal } from "@dfinity/principal";
 const mint_button = document.getElementById("mint");
 mint_button.addEventListener("click", mint_nft);
 
+
+const connect_plug_button = document.getElementById("connect-plug");
+connect_plug_button.addEventListener("click", connect_plug);
+
+async function connect_plug() {
+  // Canister Ids
+  const nnsCanisterId = 'ryjl3-tyaaa-aaaaa-aaaba-cai'
+
+  // Whitelist
+  const whitelist = [
+    nnsCanisterId,
+  ];
+
+  // Make the request
+  const isConnected = await window.ic.plug.requestConnect({
+    whitelist,
+  });
+
+  // Get the user principal id
+  const principalId = await window.ic.plug.agent.getPrincipal();
+
+  // console.log(`Plug's user principal Id is ${principalId}`);
+  let elmMyPrincipal = document.getElementById("my-principal");
+  let elmPrincipal = document.getElementById("principal");
+  if (elmPrincipal.value == "") {
+    elmMyPrincipal.closest(".d-none").classList.remove("d-none");
+  }
+  elmMyPrincipal.innerHTML = `Your Plug Principal ID<br>${principalId}!`;
+  elmPrincipal.value = principalId;
+
+  show_my_nfts(principalId);
+}
+
+
+
+
 async function mint_nft() {
   
   // Get the url of the image from the input field
@@ -45,5 +81,8 @@ async function own_nft() {
   console.log("The id is " + Array(mint_num));
 
   // Show how many nft the person minted.
-  document.getElementById("amount").innerText = "This principal own " + Array(mint_num);
+  document.getElementById("amount").innerText = "This principal owned " + Array(mint_num);
 };
+
+
+
